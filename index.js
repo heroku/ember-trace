@@ -1,5 +1,9 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-trace'
+  name: 'ember-trace',
+
+  includedCommands() {
+    return require('./commands');
+  }
 };

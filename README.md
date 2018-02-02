@@ -18,7 +18,7 @@ ember install ember-trace
 ember trace app/templates/my-route.hbs
 ```
 
-This commands emits the graph to stdout in [Graphviz DOT format], You’ll
+This commands emits the graph to stdout in [Graphviz DOT format]. You’ll
 probably want to pipe it straight into the `dot` program to generate the graph.
 
 ```

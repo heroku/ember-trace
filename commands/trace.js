@@ -7,7 +7,7 @@ const { preprocess, traverse } = require('@glimmer/syntax');
 
 module.exports = {
   name: 'trace',
-  description: 'Generate a graph of templates',
+  description: 'Generates a dataflow graph from the given template in Graphviz DOT format',
   works: 'insideProject',
 
   anonymousOptions: ['<entrypoint>'],

@@ -1,26 +1,36 @@
 # ember-trace
 
-This README outlines the details of collaborating on this Ember addon.
+[![npm version](https://badge.fury.io/js/ember-trace.svg)](https://badge.fury.io/js/ember-trace)
+
+Generate [Graphviz] dataflow graphs for your Ember app.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-trace`
-* `yarn install`
+```
+ember install ember-trace
+```
 
-## Running
+[Graphviz installation](http://graphviz.org/download/)
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+## Usage
 
-## Running Tests
+```
+ember trace app/templates/my-route.hbs
+```
 
-* `yarn test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+This commands emits the graph to stdout in [Graphviz DOT format], You’ll
+probably want to pipe it straight into the `dot` program to generate the graph.
 
-## Building
+```
+ember trace app/templates/my-route.hbs | dot -Tpdf > graph.pdf
+```
 
-* `ember build`
+Some ember-cli addons emit deprecation warnings on stdout, so you’ll want to
+strip those before handing it over to `dot`.
 
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+```
+ember trace app/templates/my-route.hbs | sed 's/^DEPRECATION.*$//g' | dot -Tpdf > graph.pdf
+```
+
+[Graphviz]: http://graphviz.org/
+[Graphviz DOT format]: https://www.graphviz.org/doc/info/lang.html

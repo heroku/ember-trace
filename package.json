@@ -1,17 +1,17 @@
 {
   "name": "ember-trace",
   "version": "0.0.2",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Generate Graphviz dataflow graphs for your Ember app",
   "keywords": [
     "ember-addon"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "jamie@jgwhite.co.uk",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/heroku/ember-trace",
   "scripts": {
     "build": "ember build",
     "lint:js": "eslint ./*.js addon addon-test-support app config lib server test-support tests",
@@ -20,7 +20,6 @@
   },
   "dependencies": {
     "@glimmer/syntax": "^0.30.5",
-    "ember-cli-babel": "^6.6.0",
     "glob": "^7.1.2",
     "rsvp": "^4.8.1"
   },
@@ -28,6 +27,7 @@
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~2.18.0",
+    "ember-cli-babel": "^6.6.0",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.2.1",
     "ember-cli-htmlbars": "^2.0.1",

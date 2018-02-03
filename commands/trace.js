@@ -18,18 +18,20 @@ module.exports = {
 
   run({ output }, [entrypoint]) {
     let tracer = new Tracer();
+    let [,root] = entrypoint.match(/^(.+?\/app\/)(.+)$/);
 
-    return glob('app/**/*.hbs')
+    return glob(`${root}**/*.hbs`)
       .then(files => {
         files.forEach(file => {
           let hbs = fs.readFileSync(file, { encoding: 'utf8' });
           let ast = preprocess(hbs);
-          let visitor = tracer.visitorFor(file);
+          let moduleName = file.replace(root, '');
+          let visitor = tracer.visitorFor(moduleName);
 
           traverse(ast, visitor);
         });
 
-        let dot = tracer.dotFor(entrypoint);
+        let dot = tracer.dotFor(entrypoint.replace(root, ''));
 
         if (output) {
           return writeFile(output, dot);

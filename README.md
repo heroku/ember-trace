@@ -6,7 +6,7 @@ Generate [Graphviz] dataflow graphs for your Ember app.
 
 ## What & Why?
 
-Given some templates:
+Given [some templates]:
 
 ```
 app/templates/
@@ -64,4 +64,5 @@ Created as an experiment in early 2018 by the Human Interface Team at [Heroku].
 
 [Graphviz]: http://graphviz.org/
 [Graphviz DOT format]: https://www.graphviz.org/doc/info/lang.html
+[some templates]: ./tests/dummy/app/templates/
 [Heroku]: https://heroku.com/

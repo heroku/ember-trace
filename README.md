@@ -19,7 +19,7 @@ app/templates/
 Running ember trace:
 
 ```sh
-$ ember trace app/templates/application.hbs
+$ ember trace app/templates/application.hbs | dot -Tpng > docs/images/example.png
 ```
 
 Will produce something like this:

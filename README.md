@@ -4,6 +4,26 @@
 
 Generate [Graphviz] dataflow graphs for your Ember app.
 
+Given some templates:
+
+```
+app/templates/
+├── application.hbs
+└── components
+    ├── x-bar.hbs
+    └── x-foo.hbs
+```
+
+Running ember trace:
+
+```sh
+$ ember trace app/templates/application.hbs
+```
+
+Will produce something like this:
+
+![Example graph](./docs/images/example.png)
+
 ## Installation
 
 ```
@@ -18,7 +38,7 @@ ember install ember-trace
 ember trace app/templates/my-route.hbs
 ```
 
-This commands emits the graph to stdout in [Graphviz DOT format]. You’ll
+This command emits the graph to stdout in [Graphviz DOT format]. You’ll
 probably want to pipe it straight into the `dot` program to generate the graph.
 
 ```

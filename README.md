@@ -4,6 +4,8 @@
 
 Generate [Graphviz] dataflow graphs for your Ember app.
 
+## What & Why?
+
 Given some templates:
 
 ```
@@ -24,13 +26,17 @@ Will produce something like this:
 
 ![Example graph](./docs/images/example.png)
 
+These graphs can be useful for analysing how data flows through Ember apps.
+Put another way, they’re a visual tool for answering questions like “where did
+this value come from?” and “who owns it?”.
+
 ## Installation
 
 ```
 ember install ember-trace
 ```
 
-[Graphviz installation](http://graphviz.org/download/)
+Then [download and install GraphViz](http://graphviz.org/download/).
 
 ## Usage
 
@@ -52,5 +58,10 @@ strip those before handing it over to `dot`.
 ember trace app/templates/my-route.hbs | sed 's/^DEPRECATION.*$//g' | dot -Tpdf > graph.pdf
 ```
 
+## History
+
+Created as an experiment in early 2018 by the Human Interface Team at [Heroku].
+
 [Graphviz]: http://graphviz.org/
 [Graphviz DOT format]: https://www.graphviz.org/doc/info/lang.html
+[Heroku]: https://heroku.com/

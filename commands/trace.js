@@ -18,7 +18,7 @@ module.exports = {
 
   run({ output }, [entrypoint]) {
     let tracer = new Tracer();
-    let [,root] = entrypoint.match(/^(.+?\/app\/)(.+)$/);
+    let [,root] = entrypoint.match(/^(.*?\/?app\/)(.+)$/);
 
     return glob(`${root}**/*.hbs`)
       .then(files => {

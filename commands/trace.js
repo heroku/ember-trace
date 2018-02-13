@@ -13,11 +13,14 @@ module.exports = {
   anonymousOptions: ['<entrypoint>'],
 
   availableOptions: [
-    { name: 'output', type: 'Path', aliases: ['o'] }
+    { name: 'output', type: 'Path', aliases: ['o'] },
+    { name: 'filter', type: String, aliases: ['f'], default: '.*' }
   ],
 
-  run({ output }, [entrypoint]) {
-    let tracer = new Tracer();
+  run({ output, filter }, [entrypoint]) {
+    filter = new RegExp(filter);
+
+    let tracer = new Tracer({ filter });
     let [,root] = entrypoint.match(/^(.*?\/?app\/)(.+)$/);
 
     return glob(`${root}**/*.hbs`)

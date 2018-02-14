@@ -18,7 +18,7 @@ module.exports = {
   ],
 
   run({ output, filter }, [entrypoint]) {
-    filter = new RegExp(filter);
+    filter = new RegExp(filter, 'i');
 
     let tracer = new Tracer({ filter });
     let [,root] = entrypoint.match(/^(.*?\/?app\/)(.+)$/);

@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-trace',
+  name: require('./package').name,
 
   includedCommands() {
     return require('./commands');

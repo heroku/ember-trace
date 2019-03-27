@@ -1,6 +1,6 @@
 {
   "name": "ember-trace",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Generate Graphviz dataflow graphs for your Ember app",
   "keywords": [
     "ember-addon"

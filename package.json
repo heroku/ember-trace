@@ -21,7 +21,7 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "@glimmer/syntax": "^0.30.5",
+    "@glimmer/syntax": "^0.62.0",
     "glob": "^7.1.2",
     "rsvp": "^4.8.1"
   },

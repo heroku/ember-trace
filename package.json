@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@glimmer/syntax": "^0.30.5",
-    "glob": "^7.1.2",
+    "glob": "^9.0.0",
     "rsvp": "^4.8.1"
   },
   "devDependencies": {
